@@ -1,15 +1,14 @@
-Lua Statsd client
+Tarantool Statsd client
 =================
 
-`lua-statsd-client` is a [Statsd](https://github.com/etsy/statsd) client for
-Lua. It supports all Statsd meter types.
+Forked from [lua-statsd-client](https://github.com/stvp/lua-statsd-client)
+[Statsd](https://github.com/etsy/statsd) client for lua. It supports all Statsd meter types.
 
 Installation
 ------------
 
 ```sh
-% wget https://raw.github.com/stvp/lua-statsd-client/master/rockspecs/statsd-2.0.0-1.rockspec
-% luarocks install statsd-2.0.0-1.rockspec
+% wget https://raw.githubusercontent.com/shurshun/tarantool-statsd/master/statsd.lua -O /usr/share/tarantool/statsd.lua
 ```
 
 Usage
@@ -34,12 +33,3 @@ statsd:timer( "page_render", 105 )
 statsd:histogram( "page_render_time", 105 )
 statsd:meter( "page_load", 1 )
 ```
-
-Development
------------
-
-```
-% luarocks install busted
-% busted spec
-```
-

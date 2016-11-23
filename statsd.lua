@@ -4,12 +4,11 @@
 
 local math = require "math"
 local os = require "os"
-local socket = require "socket"
 
 math.randomseed(os.time())
 
 local function send_to_socket(self, string)
-  return self.udp:send(string)
+  return self.udp:sendto(self.host, self.port, string)
 end
 
 local function make_statsd_message(self, stat, delta, kind, sample_rate)
@@ -131,8 +130,7 @@ return function(options)
   local namespace  = options.namespace or nil
   local packet_size = options.packet_size or 508 --  RFC791
 
-  local udp = socket.udp()
-  udp:setpeername(host, port)
+  local udp = socket('AF_INET', 'SOCK_DGRAM', 'udp')
 
   return {
     namespace = namespace,
