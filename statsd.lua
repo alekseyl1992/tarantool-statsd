@@ -4,6 +4,7 @@
 
 local math = require "math"
 local os = require "os"
+local socket = require "socket"
 
 math.randomseed(os.time())
 
