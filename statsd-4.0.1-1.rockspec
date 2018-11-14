@@ -1,8 +1,8 @@
 package = "statsd"
-version = "4.0.0-1"
+version = "4.0.1-1"
 source = {
   url = "git://github.com/alekseyl1992/tarantool-statsd.git",
-  tag = "v4.0.0"
+  tag = "v4.0.1"
 }
 description = {
   summary = "Statsd client.",

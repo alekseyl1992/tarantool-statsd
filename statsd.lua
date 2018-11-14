@@ -134,6 +134,8 @@ return function(options)
   local udp = socket('AF_INET', 'SOCK_DGRAM', 'udp')
 
   return {
+    host = host,
+    port = port,
     namespace = namespace,
     udp = udp,
     packet_size = packet_size,
